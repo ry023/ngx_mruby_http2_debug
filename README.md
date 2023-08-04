@@ -27,9 +27,9 @@ first `docker-compose up`, and
 
 ```
 # debug master process
-docker exec -it ngx_mruby_webp_debug_revproxy_1 gdb -p 1
+docker exec --privileged -it mruby_http2_debug_ngx_1 gdb -p 1
 
 # debug worker process
-docker exec -it ngx_mruby_webp_debug_revproxy_1 ps aux # check process
-docker exec -it ngx_mruby_webp_debug_revproxy_1 gdb -p 7 # example
+docker exec -it ngx_mruby_http2_debug_ngx_1 ps aux # check process
+docker exec --privileged -it ngx_mruby_http2_debug_ngx_1 gdb -p 7 # example
 ```
