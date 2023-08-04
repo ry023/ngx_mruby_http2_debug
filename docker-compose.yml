@@ -1,28 +1,32 @@
 version: "3.9"
 services:
-  backend-site:
-    build: backend-site/
-    networks:
-      app_net:
-        ipv4_address: 192.168.0.10
-    ports:
-      - "127.0.0.1:8080:80"
-  revproxy:
-    build: revproxy/
-    # for gdb debugging
-    privileged: true
-    networks:
-      app_net:
-        ipv4_address: 192.168.0.20
+  ngx:
+    build: ngx/
     ports:
       - "127.0.0.1:10443:443"
-  revproxy-lua:
-    build: revproxy-lua/
-    networks:
-      app_net:
-        ipv4_address: 192.168.0.30
-    ports:
-      - "127.0.0.1:20443:443"
+  #backend-site:
+  #  build: backend-site/
+  #  networks:
+  #    app_net:
+  #      ipv4_address: 192.168.0.10
+  #  ports:
+  #    - "127.0.0.1:8080:80"
+  #revproxy:
+  #  build: revproxy/
+  #  # for gdb debugging
+  #  privileged: true
+  #  networks:
+  #    app_net:
+  #      ipv4_address: 192.168.0.20
+  #  ports:
+  #    - "127.0.0.1:10443:443"
+  #revproxy-lua:
+  #  build: revproxy-lua/
+  #  networks:
+  #    app_net:
+  #      ipv4_address: 192.168.0.30
+  #  ports:
+  #    - "127.0.0.1:20443:443"
 networks:
   app_net:
     driver: bridge
