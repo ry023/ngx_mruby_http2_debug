@@ -59,5 +59,5 @@ COPY ./src /usr/share/nginx/html
 WORKDIR /usr/local/nginx
 
 # gdb debugging
-RUN apt-get update && apt-get install -y gdb gdbserver
+RUN apt-get update && apt-get install -y gdb
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
