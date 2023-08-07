@@ -24,9 +24,8 @@ RUN git clone https://github.com/matsumotory/ngx_mruby
 RUN wget http://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz \
   && tar zxf openssl-$OPENSSL_VERSION.tar.gz \
   && rm openssl-$OPENSSL_VERSION.tar.gz
-RUN wget http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz \
-  && tar zxf nginx-$NGINX_VERSION.tar.gz \
-  && rm nginx-$NGINX_VERSION.tar.gz
+
+COPY nginx /nginx-1.23.1
 
 WORKDIR /ngx_mruby
 RUN ./configure \
