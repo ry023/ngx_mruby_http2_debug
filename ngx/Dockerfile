@@ -36,7 +36,8 @@ RUN ./configure \
                          --with-http_stub_status_module \
                          --without-stream_access_module \
                          --prefix=$prefix \
-                         --with-openssl-opt=enable-tls1_3" \
+                         --with-openssl-opt=enable-tls1_3 \
+                         --with-cc-opt='-O0'" \
   --with-openssl-src=/openssl-$OPENSSL_VERSION
 
 RUN make
