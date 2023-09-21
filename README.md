@@ -1,3 +1,5 @@
+Note: I archived this repository because the problem was fixed at https://github.com/matsumotory/ngx_mruby/issues/508
+
 # ngx_mruby_webp_debug
 
 Environment to reproduce that an error occurs in the stream in HTTP2 when using `mruby_output_header_filter` directive
